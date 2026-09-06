@@ -484,38 +484,49 @@ footer.site{border-top:1px solid var(--ink);padding:70px 0 40px;position:relativ
 .ct__actions .official-link,.rec__actions .official-link{display:inline-flex;align-items:center;justify-content:center;}
 @media(max-width:600px){.section-image-note{text-align:left;}.ct__actions .official-link,.rec__actions .official-link{width:100%;}.deflist{min-width:0}.deflist div{grid-template-columns:minmax(0,110px) minmax(0,1fr)}.deflist dd,.deflist dd a{min-width:0;overflow-wrap:anywhere;}}
 </style>
-<style id="site-motion-v1">
-/* Legacy reveal is retired: visible content is the default, even without JS. */
-.rv,.js .rv{opacity:1;transform:none;transition:none!important}
-[data-motion-owned]{transition:none!important}
-@media(hover:hover) and (prefers-reduced-motion:no-preference){
-  .btn,.tlink{transition:translate .25s ease,filter .25s ease!important}
-  .btn:hover,.tlink:hover{translate:0 -3px;filter:brightness(1.07)}
-}
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-}
-</style>
-<style id="tadagumi-motion">
+<style id="tadagumi-recruit-motion">
+.rv,.js .rv,.js .rv.is-in{opacity:1;transform:none;transition:none}
 .fv__motion-window{overflow:hidden;clip-path:var(--chamfer)}
-.fv__motion-window .fv__img{clip-path:none}
-.msg__figure{overflow:hidden;clip-path:var(--chamfer-alt)}
-.msg__figure img{clip-path:none}
-@media(max-width:767px){.msg__figure{clip-path:var(--chamfer)}}
+.fv__motion-window .fv__img{clip-path:none;scale:none}
+.fv,.msg,.biz,.rec,.ct{position:relative;isolation:isolate}
+.tada-motion-art{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-1}
+.tada-streak{position:absolute;left:-2%;top:24px;width:44%;max-width:640px;height:150px;
+  background:linear-gradient(176deg,transparent 0 12%,#bb985e 12% 29%,transparent 29% 34%,#896b3f 34% 52%,transparent 52% 59%,#c4aa80 59% 82%,transparent 82%);
+  opacity:.17;clip-path:polygon(0 0,93% 0,88% 12%,100% 17%,83% 28%,94% 32%,79% 46%,96% 55%,86% 62%,99% 71%,81% 82%,89% 100%,0 100%)}
+.tada-streak--right{left:auto;right:-2%;top:100px;width:30%;height:105px;rotate:180deg;opacity:.14}
+.fv .tada-streak{top:115px;height:240px;width:43%;opacity:.25}
+.fv .tada-streak--right{top:380px;width:33%;height:160px;opacity:.22}
+.msg .tada-streak{top:60px}
+.biz .tada-streak{top:10px}
+.rec .tada-streak--right{top:30px}
+@media(prefers-reduced-motion:no-preference){
+  .fv__slide.is-on .fv__motion-window{animation:tada-photo-enter .7s cubic-bezier(.22,1,.36,1) .12s backwards}
+  .fv__slide.is-on .fv__cap p{animation:tada-copy-enter .8s cubic-bezier(.22,1,.36,1) .28s backwards}
+  .fv__slide.is-on .fv__cap p:nth-child(2){animation-delay:.40s}
+}
+@keyframes tada-photo-enter{from{opacity:0;translate:60px 0}to{opacity:1;translate:0 0}}
+@keyframes tada-copy-enter{from{opacity:0;translate:-48px 0}to{opacity:1;translate:0 0}}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+  .btn{transition:background .25s ease,color .25s ease,translate .25s ease}
+  .btn:hover{translate:4px 0}
+}
+@media(max-width:767px){
+  .tada-streak{width:50%;height:100px;opacity:.13}
+  .tada-streak--right{width:34%;height:75px;top:130px}
+  .fv .tada-streak{top:55px;height:130px;opacity:.18}
+  .fv .tada-streak--right{top:370px;height:100px;opacity:.15}
+  @keyframes tada-photo-enter{from{opacity:0;translate:28px 0}to{opacity:1;translate:0 0}}
+  @keyframes tada-copy-enter{from{opacity:0;translate:-24px 0}to{opacity:1;translate:0 0}}
+}
 @media(max-width:600px){
-  .ct__grid{grid-template-columns:minmax(0,1fr)}
-  .ct__grid>*{min-width:0}
+  .ct__grid{grid-template-columns:minmax(0,1fr)}.ct__grid>*{min-width:0}
   .ct__actions .btn{white-space:normal;text-align:center;max-width:100%}
   .ct__info div{grid-template-columns:88px minmax(0,1fr)}
   .ct__info dd{overflow-wrap:anywhere;min-width:0}
 }
-@media(prefers-reduced-motion:no-preference){
-  .fv__slide.is-on .fv__img{animation:tada-photo-in 1.8s cubic-bezier(.22,1,.36,1) both}
-  .fv__slide.is-on .fv__cap p{animation:tada-caption-in 1s cubic-bezier(.22,1,.36,1) .16s backwards}
-  .fv__slide.is-on .fv__cap p:nth-child(2){animation-delay:.30s}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
-@keyframes tada-photo-in{from{scale:1.09;opacity:.45}to{scale:1;opacity:1}}
-@keyframes tada-caption-in{from{opacity:0;translate:0 28px}to{opacity:1;translate:0 0}}
 </style>
 </head>
 <body>
@@ -551,7 +562,8 @@ footer.site{border-top:1px solid var(--ink);padding:70px 0 40px;position:relativ
 
 <!-- ===================== FV ===================== -->
 <section class="fv grid-bg" aria-label="事業領域">
-  <div class="fv__view">
+<div class="tada-motion-art" aria-hidden="true"><i class="tada-streak"></i><i class="tada-streak tada-streak--right"></i></div>
+<div class="fv__view">
     <div class="fv__track" id="fvTrack">
 
       <article class="fv__slide" data-i="0" data-slot="1" id="fvPanel0" role="tabpanel" aria-labelledby="fvTab0">
@@ -598,8 +610,8 @@ footer.site{border-top:1px solid var(--ink);padding:70px 0 40px;position:relativ
       <div>
         <p class="lead__tag en">WOOD, HOME & COMMUNITY</p>
         <h1>
-          <span class="line" data-motion="reveal">木から、住まいへ。</span>
-          <span class="line" data-motion="reveal">暮らしをつくり、地域を支える。</span>
+          <span class="line">木から、住まいへ。</span>
+          <span class="line">暮らしをつくり、地域を支える。</span>
         </h1>
         <p class="lead__meta">株式会社多田組は、新潟県長岡市の家づくり・製材・土木工事です。<br>
           多田組は新潟県長岡市を拠点に、家づくり、製材、公共工事に取り組む会社です。昭和8年に材木店から始まり、自社で培ってきた木材加工の技術を住まいづくりに活かしています。家族ごとに異なる暮らしを、完全自由設計でかたちにします。</p>
@@ -614,16 +626,17 @@ footer.site{border-top:1px solid var(--ink);padding:70px 0 40px;position:relativ
 
 <!-- ===================== MESSAGE ===================== -->
 <section class="msg" id="message">
-  <div class="wrap">
+<div class="tada-motion-art" aria-hidden="true"><i class="tada-streak"></i><i class="tada-streak tada-streak--right"></i></div>
+<div class="wrap">
     <div class="shead rv">
       <h2>MESSAGE</h2>
       <p>私たちについて</p>
     </div>
     <div class="msg__grid">
-      <figure class="msg__figure rv" data-motion="reveal">
-        <img data-motion="parallax" src="image/case-company.jpg" alt="障子と畳のある明るい室内。住まいを紹介するイメージ写真" width="1800" height="2694" loading="lazy" decoding="async">
+      <figure class="msg__figure rv">
+        <img src="image/case-company.jpg" alt="障子と畳のある明るい室内。住まいを紹介するイメージ写真" width="1800" height="2694" loading="lazy" decoding="async">
       </figure>
-      <div class="msg__panel rv" data-motion="reveal">
+      <div class="msg__panel rv">
         <h3>
           <span class="line">OUR APPROACH</span>
           <span class="line">木の持ち味を、暮らしの中へ。</span>
@@ -657,7 +670,8 @@ footer.site{border-top:1px solid var(--ink);padding:70px 0 40px;position:relativ
 
 <!-- ===================== BUSINESS ===================== -->
 <section class="biz" id="business">
-  <div class="wrap">
+<div class="tada-motion-art" aria-hidden="true"><i class="tada-streak"></i><i class="tada-streak tada-streak--right"></i></div>
+<div class="wrap">
     <div class="biz__intro">
       <div class="shead rv" style="margin-bottom:0">
         <h2>BUSINESS</h2>
@@ -719,7 +733,8 @@ footer.site{border-top:1px solid var(--ink);padding:70px 0 40px;position:relativ
 
 <!-- ===================== RECRUIT ===================== -->
 <section class="rec" id="recruit">
-  <div class="wrap">
+<div class="tada-motion-art" aria-hidden="true"><i class="tada-streak"></i><i class="tada-streak tada-streak--right"></i></div>
+<div class="wrap">
     <div class="rec__top">
       <div class="rv">
         <p class="badge">募集中</p>
@@ -730,7 +745,7 @@ footer.site{border-top:1px solid var(--ink);padding:70px 0 40px;position:relativ
         <p class="en-sub">RECRUIT</p>
         <p><span class="line">建築・土木技術者、土木作業員を募集しています。</span><span class="line">勤務地は新潟県長岡市。</span><span class="line">長岡市・長岡市近辺で、家づくりと地域を支える仕事に取り組みませんか。募集条件と応募方法は公式サイトの採用情報をご確認ください。</span></p>
       </div>
-      <div class="rec__photo rv" data-motion="reveal">
+      <div class="rec__photo rv">
         <img src="image/recruit.jpg" alt="ヘルメットと安全ベストを着用して現場に立つ作業員の後ろ姿" width="1800" height="2700" loading="lazy" decoding="async">
         <p class="rec__cap">※ 写真は実際の社員ではなく、採用を紹介するためのイメージです</p>
       </div>
@@ -756,7 +771,7 @@ footer.site{border-top:1px solid var(--ink);padding:70px 0 40px;position:relativ
       <p>会社概要</p>
     </div>
     <div class="comp__grid">
-      <dl class="deflist rv" data-motion="reveal">
+      <dl class="deflist rv">
         <div><dt>社名</dt><dd>株式会社多田組</dd></div>
         <div><dt>所在地</dt><dd><!--BLOCK:郵便番号-->〒940-0137　<!--/BLOCK:郵便番号-->新潟県長岡市平2丁目1-15</dd></div>
         
@@ -778,7 +793,7 @@ footer.site{border-top:1px solid var(--ink);padding:70px 0 40px;position:relativ
       <h2>FAQ</h2>
       <p>よくあるご質問</p>
     </div>
-    <ul class="faq__list rv" data-motion="reveal">
+    <ul class="faq__list rv">
       <li>
         <span class="faq__q" aria-hidden="true">Q.</span>
         <h3>株式会社多田組はどこにありますか？</h3>
@@ -815,7 +830,8 @@ footer.site{border-top:1px solid var(--ink);padding:70px 0 40px;position:relativ
 
 <!-- ===================== CONTACT ===================== -->
 <section class="ct" id="contact">
-  <div class="wrap">
+<div class="tada-motion-art" aria-hidden="true"><i class="tada-streak"></i><i class="tada-streak tada-streak--right"></i></div>
+<div class="wrap">
     <div class="shead rv">
       <h2>CONTACT</h2>
       <p>お問い合わせ</p>
@@ -830,7 +846,7 @@ footer.site{border-top:1px solid var(--ink);padding:70px 0 40px;position:relativ
           <a class="btn btn--ghost" href="#recruit">採用情報を見る</a>
         </div>
       </div>
-      <dl class="ct__info rv" data-motion="reveal">
+      <dl class="ct__info rv">
         <div><dt>本社</dt><dd><!--BLOCK:郵便番号-->〒940-0137　<!--/BLOCK:郵便番号-->新潟県長岡市平2丁目1-15</dd></div>
         <div><dt>TEL</dt><dd>0258-52-2555</dd></div>
         <!--BLOCK:FAX--><div><dt>FAX</dt><dd>0258-52-3565</dd></div><!--/BLOCK:FAX-->
@@ -958,71 +974,50 @@ footer.site{border-top:1px solid var(--ink);padding:70px 0 40px;position:relativ
   }
 })();
 </script>
-<script id="site-motion-v1">
+<script id="tadagumi-recruit-motion">
 (() => {
-  'use strict';
-  const root = document.documentElement;
-  if (root.dataset.siteMotion) return;
-  root.dataset.siteMotion = 'v1';
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
-  const animations = new Set();
-  const seen = new WeakSet();
-  const ease = 'cubic-bezier(.22,1,.36,1)';
-  let observer;
-  function play(el, frames, duration, delay = 0) {
-    if (reduce.matches || !el.animate) return;
-    const a = el.animate(frames, {duration, delay, easing:ease, fill:'backwards'});
-    animations.add(a);
-    a.onfinish = a.oncancel = () => animations.delete(a);
+  const root=document.documentElement;
+  if(root.dataset.tadaMotion==='beforward-v2')return;
+  root.dataset.tadaMotion='beforward-v2';
+  const media=matchMedia('(prefers-reduced-motion: reduce)');
+  const active=new Set(),seen=new WeakSet();
+  let io;
+  function animate(el,x,delay,duration=800){
+    if(media.matches||!el.animate||seen.has(el))return;
+    seen.add(el);el.dataset.tadaEntered='true';
+    const opacity=getComputedStyle(el).opacity;
+    const a=el.animate([{opacity:0,translate:x+'px 0'},{opacity,translate:'0 0'}],
+      {duration,delay,easing:'cubic-bezier(.22,1,.36,1)',fill:'backwards'});
+    active.add(a);a.onfinish=a.oncancel=()=>active.delete(a);
   }
-  function reveal(el, delay = 0) {
-    if (seen.has(el)) return;
-    seen.add(el);
-    el.dataset.motionOwned = '';
-    // Individual translate composes with layout/carousel transforms.
-    play(el, [{opacity:0,translate:'0 32px'},{opacity:1,translate:'0 0'}], 900, delay);
+  function enter(el){
+    const small=matchMedia('(max-width:767px)').matches;
+    const distance=small?24:50;
+    if(el.classList.contains('tada-motion-art')){
+      animate(el.querySelector('.tada-streak'),-distance,0,1000);
+      animate(el.querySelector('.tada-streak--right'),distance,200,1000);
+    }else{
+      const right=el.classList.contains('msg__figure')||el.classList.contains('rec__photo');
+      animate(el,right?distance:-distance,el.matches('h2')?120:200);
+    }
   }
-  const titles = []; // Carousel entrance is owned by tadagumi-motion CSS.
-  titles.forEach((el,i) => reveal(el, 120 + i*110));
-  const heroPhoto = document.querySelector('.hero .bg, [data-motion="hero-photo"]');
-  if (heroPhoto) play(heroPhoto,[{scale:'1.07',opacity:.4},{scale:'1',opacity:1}],1400);
-  const candidates = [...document.querySelectorAll('main h2, .strip figure, .biz__item, [data-motion="reveal"]')];
-  // Avoid nested animation doubling when a card contains a heading.
-  const targets = candidates.filter(el => !candidates.some(parent => parent !== el && parent.contains(el)));
-  if ('IntersectionObserver' in window && !reduce.matches) {
-    observer = new IntersectionObserver(entries => {
-      const visible = entries.filter(e => e.isIntersecting);
-      visible.forEach((entry,i) => {reveal(entry.target, Math.min(i,3)*100);observer.unobserve(entry.target);});
-    }, {threshold:0,rootMargin:'0px 0px -8% 0px'});
-    targets.forEach(el => observer.observe(el));
-  }
-  // Opt in only on a clipped photo's inner layer; never move the text or track.
-  const photos = [...document.querySelectorAll('[data-motion="parallax"]')];
-  let frame = 0;
-  function updatePhotos() {
-    frame = 0;
-    if (reduce.matches) return;
-    const wide = matchMedia('(min-width: 768px)').matches;
-    photos.forEach(el => {
-      const box = el.parentElement.getBoundingClientRect();
-      if(box.bottom < 0 || box.top > innerHeight) return;
-      const progress = Math.max(-1,Math.min(1,(box.top+box.height/2-innerHeight/2)/innerHeight));
-      el.style.translate = '0 ' + (progress*(wide?24:10)).toFixed(2) + 'px';
-      el.style.scale = '1.08';
+  const nodes=[...document.querySelectorAll('.tada-motion-art, main h2, .lead h1 .line, .msg__figure, .msg__panel, .biz__item, .rec__photo')];
+  if(!media.matches&&'IntersectionObserver' in window){
+    io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){enter(e.target);io.unobserve(e.target)}}),
+      {threshold:0,rootMargin:'0px 0px -12% 0px'});
+    nodes.forEach(el=>{
+      // Observe the visible top of tall sections through their first decoration.
+      if(el.classList.contains('tada-motion-art')){
+        const anchor=el.parentElement;
+        const r=anchor.getBoundingClientRect();
+        if(r.top<innerHeight*.88&&r.bottom>0){enter(el);return;}
+      }
+      io.observe(el);
     });
   }
-  function schedule(){if(!frame && !reduce.matches) frame=requestAnimationFrame(updatePhotos);}
-  if(photos.length){addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);schedule();}
-  function stop(){
-    if(!reduce.matches) {schedule();return;}
-    animations.forEach(a=>a.cancel());
-    if(observer)observer.disconnect();
-    cancelAnimationFrame(frame);frame=0;
-    photos.forEach(el=>{el.style.removeProperty('translate');el.style.removeProperty('scale');});
-  }
-  reduce.addEventListener('change',stop);
-  document.addEventListener('focusin',()=>animations.forEach(a=>a.finish()));
-  addEventListener('pagehide',()=>animations.forEach(a=>a.cancel()));
+  media.addEventListener('change',e=>{if(e.matches){active.forEach(a=>a.cancel());if(io)io.disconnect()}});
+  document.addEventListener('focusin',()=>active.forEach(a=>a.finish()));
+  addEventListener('pagehide',()=>active.forEach(a=>a.cancel()));
 })();
 </script>
 </body>

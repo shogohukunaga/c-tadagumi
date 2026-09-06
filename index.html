@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>株式会社多田組｜新潟県長岡市の家づくり・製材・土木工事</title>
+<meta name="description" content="株式会社多田組は新潟県長岡市の家づくり・製材・土木工事です。家づくり・製材事業・公共工事を手がけています。">
+<link rel="canonical" href="https://shogohukunaga.github.io/c-tadagumi/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="株式会社多田組｜新潟県長岡市の家づくり・製材・土木工事">
+<meta property="og:description" content="新潟県長岡市の家づくり・製材・土木工事。家づくり・製材事業・公共工事。">
+<meta property="og:image" content="https://shogohukunaga.github.io/c-tadagumi/image/work-civil.jpg">
+<meta property="og:url" content="https://shogohukunaga.github.io/c-tadagumi/">
+<meta property="og:site_name" content="株式会社多田組">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+<script>document.documentElement.className+=" js";</script>
+<style>
+/* =========================================================
+   株式会社多田組 — design-spec.md 準拠
+   モノクローム × エディトリアル × 幾何モチーフの反復
+   ========================================================= */
+:root{
+  --ink:#111111;
+  --sub:#6b6b6b;
+  --line:#dcdcdc;
+  --band:#f1f1f1;
+  --band-2:#fafafa;
+  --accent:#14603a;
+  --maxw:1200px;
+  --pad:150px;
+  /* 形状語彙 */
+  --btn-hex:polygon(12px 0,calc(100% - 12px) 0,100% 50%,calc(100% - 12px) 100%,12px 100%,0 50%);
+  --chamfer:polygon(44px 0,100% 0,100% calc(100% - 44px),calc(100% - 44px) 100%,0 100%,0 44px);
+  --chamfer-alt:polygon(0 0,calc(100% - 44px) 0,100% 44px,100% 100%,44px 100%,0 calc(100% - 44px));
+  --diamond:polygon(50% 0,100% 50%,50% 100%,0 50%);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;background:#fff;color:var(--ink);overflow-x:hidden;
+  font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Yu Gothic",system-ui,sans-serif;
+  font-size:16px;line-height:1.9;letter-spacing:.04em;font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3,h4,p,dl,dd,figure{margin:0;}
+ul,ol{margin:0;padding:0;list-style:none;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+.line{display:inline-block;}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+
+/* --- 英字 --- */
+.en{font-family:"Work Sans","Helvetica Neue",Arial,sans-serif;}
+/* --- 縦組みローマ字 --- */
+.vtxt{
+  writing-mode:vertical-rl;font-family:"Work Sans",Arial,sans-serif;
+  font-size:11px;letter-spacing:.2em;color:var(--sub);line-height:1;white-space:nowrap;
+}
+/* --- 方眼＋45°ラティス --- */
+.grid-bg{
+  background-image:
+    linear-gradient(rgba(17,17,17,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(17,17,17,.055) 1px,transparent 1px),
+    repeating-linear-gradient(45deg,rgba(17,17,17,.035) 0 1px,transparent 1px 56px),
+    repeating-linear-gradient(-45deg,rgba(17,17,17,.035) 0 1px,transparent 1px 56px);
+  background-size:40px 40px,40px 40px,auto,auto;
+}
+/* --- 小菱形 --- */
+.dia{display:inline-block;width:7px;height:7px;background:var(--ink);clip-path:var(--diamond);
+  vertical-align:middle;flex:0 0 auto;}
+.dia--accent{background:var(--accent);}
+
+/* --- ボタン --- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  background:var(--ink);color:#fff;padding:18px 40px;font-size:14px;font-weight:500;
+  letter-spacing:.1em;clip-path:var(--btn-hex);transition:background .25s ease;border:0;cursor:pointer;
+  font-family:inherit;
+}
+.btn:hover{background:#333;}
+.btn--ghost{background:#fff;color:var(--ink);border:1px solid var(--ink);clip-path:none;padding:17px 28px;}
+.btn--ghost:hover{background:var(--band);}
+/* READ MORE 型 */
+.more{display:inline-flex;align-items:center;gap:14px;font-family:"Work Sans",Arial,sans-serif;
+  font-size:13px;letter-spacing:.14em;}
+.more i{width:22px;height:22px;background:var(--ink);clip-path:var(--diamond);position:relative;flex:0 0 auto;}
+.more i::after{content:"";position:absolute;left:8px;top:8px;width:5px;height:5px;
+  border-top:1px solid #fff;border-right:1px solid #fff;transform:rotate(45deg);}
+
+/* --- テキストリンク --- */
+.tlink{position:relative;text-decoration:underline;text-underline-offset:6px;
+  text-decoration-thickness:1px;text-decoration-color:var(--line);transition:text-decoration-color .3s;}
+.tlink:hover{text-decoration-color:var(--accent);}
+
+/* =========================================================
+   Header
+   ========================================================= */
+header.site{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid var(--line);}
+header.site .wrap{display:flex;align-items:center;gap:28px;height:84px;max-width:1560px;}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand__mark{display:flex;gap:3px;align-items:center;}
+.brand__mark span{width:13px;height:13px;background:var(--ink);clip-path:var(--diamond);display:block;}
+.brand__mark span:last-child{background:#fff;border:1px solid var(--ink);}
+.brand__name{font-size:17px;font-weight:500;letter-spacing:.08em;line-height:1.25;white-space:nowrap;}
+.brand__name small{display:block;font-family:"Work Sans",Arial,sans-serif;font-weight:400;
+  font-size:9px;letter-spacing:.22em;color:var(--sub);}
+.hmeta{font-size:11px;line-height:1.7;color:var(--sub);letter-spacing:.02em;white-space:nowrap;
+  min-width:0;flex:0 1 auto;overflow:hidden;text-overflow:ellipsis;}
+.main a{white-space:nowrap;}
+.hmeta b{color:var(--ink);font-weight:500;font-family:"Work Sans",Arial,sans-serif;letter-spacing:.06em;}
+nav.main{margin-left:auto;}
+nav.main ul{display:flex;gap:28px;font-size:13px;letter-spacing:.06em;}
+nav.main a{position:relative;padding-bottom:4px;}
+nav.main a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--accent);
+  transition:width .3s var(--ease);}
+nav.main a:hover::after{width:100%;}
+.hbtn{white-space:nowrap;}
+.hamb{display:none;background:none;border:0;padding:8px 0;cursor:pointer;width:34px;margin-left:auto;}
+.hamb span{display:block;height:1px;background:var(--ink);margin-left:auto;transition:.3s var(--ease);}
+.hamb span:nth-child(1){width:30px;}
+.hamb span:nth-child(2){width:22px;margin-top:7px;}
+.hamb span:nth-child(3){width:30px;margin-top:7px;}
+.hamb span:nth-child(4){width:16px;margin-top:7px;}
+
+/* =========================================================
+   FV — ナンバリング横並びカルーセル
+   ========================================================= */
+.fv{position:relative;overflow:hidden;padding:70px 0 0;}
+/* 横方向のみクリップ。下線付きキャプションが下にはみ出すため padding で逃がす */
+.fv__view{overflow:hidden;padding-bottom:96px;}
+.fv__track{display:flex;transition:transform .9s var(--ease);will-change:transform;}
+.fv__slide{flex:0 0 720px;padding:0 30px;opacity:.28;transition:opacity .9s var(--ease);}
+.fv__slide.is-on{opacity:1;}
+.fv__num{display:flex;align-items:flex-start;gap:14px;margin-bottom:22px;}
+.fv__num b{font-family:"Work Sans",Arial,sans-serif;font-size:38px;font-weight:500;line-height:1;
+  letter-spacing:.02em;position:relative;padding:0 16px;}
+.fv__num b::before,.fv__num b::after{content:"";position:absolute;top:-4px;bottom:-4px;width:9px;
+  border:1px solid var(--ink);}
+.fv__num b::before{left:0;border-right:0;}
+.fv__num b::after{right:0;border-left:0;}
+.fv__num em{font-family:"Work Sans",Arial,sans-serif;font-style:normal;font-size:13px;
+  letter-spacing:.16em;line-height:1.5;padding-top:6px;color:var(--ink);}
+.fv__body{position:relative;}
+.fv__img{width:100%;height:330px;object-fit:cover;clip-path:var(--chamfer);}
+.fv__cap{position:absolute;left:-14px;bottom:-30px;max-width:92%;}
+.fv__cap p{background:#fff;display:table;padding:4px 14px 6px 0;font-size:24px;font-weight:500;
+  letter-spacing:.09em;line-height:1.8;border-bottom:1px solid var(--ink);margin-bottom:5px;}
+.fv__side{position:absolute;right:-26px;top:8px;height:150px;}
+.fv__tags{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap;}
+.fv__tags span{background:var(--ink);color:#fff;font-size:11px;letter-spacing:.06em;padding:4px 11px;}
+.fv__tabs{display:flex;justify-content:center;gap:30px;margin-top:-14px;flex-wrap:wrap;}
+.fv__tabs button{background:none;border:0;font-family:inherit;font-size:14px;letter-spacing:.06em;
+  color:var(--sub);cursor:pointer;padding:0 0 6px;display:inline-flex;align-items:center;gap:8px;
+  border-bottom:1px solid transparent;transition:.3s;}
+.fv__tabs button .dia{opacity:0;transition:opacity .3s;width:6px;height:6px;}
+.fv__tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink);}
+.fv__tabs button[aria-selected="true"] .dia{opacity:1;}
+
+/* --- FV下の理念ストリップ --- */
+.lead{border-top:1px solid var(--line);margin-top:70px;}
+.lead .wrap{display:grid;grid-template-columns:1fr auto;gap:50px;align-items:end;padding-top:66px;padding-bottom:66px;}
+.lead h1{font-size:34px;font-weight:500;letter-spacing:.09em;line-height:1.8;}
+.lead h1 .line{display:block;width:fit-content;max-width:100%;position:relative;}
+.lead h1 .line::after{content:"";display:block;height:1px;background:var(--ink);margin-top:2px;}
+.lead__meta{margin-top:24px;font-size:14px;color:var(--sub);}
+.lead__tag{font-family:"Work Sans",Arial,sans-serif;font-size:12px;letter-spacing:.2em;
+  color:var(--sub);margin-bottom:20px;}
+.lead__cta{text-align:right;}
+.lead__tel{display:block;font-family:"Work Sans",Arial,sans-serif;font-size:32px;letter-spacing:.04em;
+  line-height:1.2;font-weight:500;}
+.lead__tel small{display:block;font-family:"Noto Sans JP",sans-serif;font-size:11px;letter-spacing:.14em;
+  color:var(--sub);margin-bottom:4px;}
+.lead__cta .btn{margin-top:18px;}
+
+/* =========================================================
+   Section base
+   ========================================================= */
+section{padding:var(--pad) 0;}
+.shead{margin-bottom:66px;}
+.shead h2{font-family:"Work Sans",Arial,sans-serif;font-size:28px;font-weight:500;letter-spacing:.14em;
+  line-height:1.3;display:table;padding-bottom:10px;border-bottom:1px solid var(--ink);}
+.shead p{font-size:15px;font-weight:500;letter-spacing:.08em;margin-top:16px;}
+.shead .note{font-weight:400;color:var(--sub);font-size:14px;letter-spacing:.04em;margin-top:8px;}
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+.msg{position:relative;}
+.msg .wrap{position:relative;}
+.msg__grid{display:grid;grid-template-columns:400px 1fr;gap:0;align-items:center;}
+.msg__figure{position:relative;z-index:2;}
+.msg__figure img{width:400px;height:460px;object-fit:cover;clip-path:var(--chamfer-alt);}
+.msg__panel{background:var(--band);padding:80px 70px 80px 110px;margin-left:-60px;position:relative;}
+.msg__panel h3{font-size:26px;font-weight:500;letter-spacing:.09em;line-height:1.85;margin-bottom:8px;}
+.msg__panel h3 .line{display:block;border-bottom:1px solid var(--ink);}
+.msg__panel .en-sub{font-family:"Work Sans",Arial,sans-serif;font-size:12px;letter-spacing:.2em;
+  color:var(--sub);margin:22px 0 26px;}
+.msg__panel p{font-size:15px;line-height:2.1;margin-bottom:16px;}
+.msg__sign{margin-top:26px;font-size:14px;color:var(--sub);}
+.msg__sign b{color:var(--ink);font-weight:500;font-size:17px;letter-spacing:.1em;margin-left:8px;}
+.msg__art{margin-top:44px;}
+.msg__art svg{width:100%;max-width:520px;height:auto;}
+
+/* =========================================================
+   BUSINESS
+   ========================================================= */
+.biz{background:var(--band);}
+.biz__intro{display:grid;grid-template-columns:1fr 300px;gap:60px;align-items:end;margin-bottom:80px;}
+.biz__intro svg{width:100%;height:auto;}
+.biz__list{display:grid;grid-template-columns:repeat(2,1fr);gap:90px 70px;}
+.biz__item{display:grid;grid-template-columns:230px 1fr;gap:34px;align-items:start;}
+.biz__item figure{position:relative;}
+.biz__item img{width:230px;height:270px;object-fit:cover;clip-path:var(--chamfer);
+  transition:transform 1.2s ease-out;}
+.biz__item figure{overflow:hidden;clip-path:var(--chamfer);}
+.biz__item:hover img{transform:scale(1.04);}
+.biz__num{font-family:"Work Sans",Arial,sans-serif;font-size:26px;font-weight:500;line-height:1;
+  letter-spacing:.02em;}
+.biz__en{font-family:"Work Sans",Arial,sans-serif;font-size:11px;letter-spacing:.16em;color:var(--sub);
+  margin:10px 0 14px;}
+.biz__item h3{font-size:20px;font-weight:500;letter-spacing:.08em;line-height:1.6;
+  padding-bottom:14px;border-bottom:1px solid var(--ink);margin-bottom:16px;}
+.biz__item p{font-size:14px;line-height:2;color:var(--ink);}
+.biz__item .req{font-size:13px;color:var(--sub);}
+
+/* =========================================================
+   工種一覧
+   ========================================================= */
+.spec__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 70px;border-top:1px solid var(--line);}
+.spec__grid li{display:flex;align-items:flex-start;gap:14px;padding:18px 2px;
+  border-bottom:1px solid var(--line);font-size:15px;letter-spacing:.05em;}
+.spec__grid li .dia{margin-top:11px;width:6px;height:6px;}
+.spec__grid li b{font-weight:500;}
+.spec__grid li span{display:block;font-size:13px;color:var(--sub);line-height:1.8;margin-top:2px;}
+
+/* =========================================================
+   RECRUIT
+   ========================================================= */
+.rec{position:relative;}
+.rec__top{display:grid;grid-template-columns:1fr 360px;gap:70px;align-items:end;margin-bottom:70px;}
+.badge{display:inline-flex;align-items:center;gap:12px;color:var(--accent);font-size:13px;
+  letter-spacing:.12em;font-weight:500;margin-bottom:22px;}
+.badge::before,.badge::after{content:"";width:14px;height:1px;background:var(--accent);}
+.badge::before{transform:rotate(60deg);}
+.badge::after{transform:rotate(-60deg);}
+.rec__top h2{font-size:36px;font-weight:500;letter-spacing:.09em;line-height:1.7;}
+.rec__top h2 .line{display:block;}
+.rec__top .en-sub{font-family:"Work Sans",Arial,sans-serif;font-size:12px;letter-spacing:.2em;
+  color:var(--sub);margin-top:18px;}
+.rec__top p{font-size:15px;line-height:2.1;margin-top:22px;max-width:38em;}
+.rec__photo img{width:100%;height:300px;object-fit:cover;clip-path:var(--chamfer);
+  filter:grayscale(1) contrast(1.05);}
+.rec__cap{font-size:11px;color:var(--sub);margin-top:12px;letter-spacing:.04em;}
+.jobs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.job{border:1px solid var(--line);background:var(--band-2);padding:34px 28px 30px;}
+.job h3{font-size:17px;font-weight:500;letter-spacing:.07em;line-height:1.6;padding-bottom:16px;
+  border-bottom:1px solid var(--ink);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+.job dl{display:grid;grid-template-columns:auto 1fr;gap:9px 16px;font-size:13.5px;line-height:1.8;}
+.job dt{color:var(--sub);white-space:nowrap;}
+.job dd{margin:0;}
+.job .pay{font-family:"Work Sans",Arial,sans-serif;font-size:15px;letter-spacing:.02em;}
+.rec__note{margin-top:34px;font-size:13px;color:var(--sub);}
+.rec__cta{margin-top:56px;border-top:1px solid var(--line);padding-top:50px;
+  display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+.rec__cta p{font-size:15px;letter-spacing:.06em;}
+.rec__cta .tel{font-family:"Work Sans",Arial,sans-serif;font-size:30px;letter-spacing:.04em;font-weight:500;
+  line-height:1.2;}
+.rec__cta .tel small{display:block;font-family:"Noto Sans JP",sans-serif;font-size:11px;
+  letter-spacing:.14em;color:var(--sub);}
+.rec__actions{display:flex;align-items:center;gap:26px;flex-wrap:wrap;}
+
+/* =========================================================
+   COMPANY
+   ========================================================= */
+.comp{background:var(--band);}
+.comp__grid{display:grid;grid-template-columns:1fr 330px;gap:80px;align-items:start;}
+.deflist{border-top:1px solid var(--ink);}
+.deflist div{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:17px 2px;
+  border-bottom:1px solid var(--line);font-size:15px;}
+.deflist dt{color:var(--sub);font-weight:400;}
+.deflist dd{margin:0;letter-spacing:.05em;}
+.cert{background:#fff;border:1px solid var(--line);padding:34px 30px;}
+.cert .mark{width:56px;height:56px;background:var(--ink);clip-path:var(--diamond);
+  display:grid;place-items:center;margin-bottom:20px;}
+.cert .mark::after{content:"";width:16px;height:16px;background:#fff;clip-path:var(--diamond);}
+.cert h3{font-size:16px;font-weight:500;letter-spacing:.07em;line-height:1.7;margin-bottom:14px;
+  padding-bottom:14px;border-bottom:1px solid var(--ink);}
+.cert p{font-size:13px;line-height:2;color:var(--sub);}
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+.faq__list{border-top:1px solid var(--ink);}
+.faq__list > li{border-bottom:1px solid var(--line);padding:30px 2px;
+  display:grid;grid-template-columns:auto 1fr;gap:6px 20px;}
+.faq__q{font-family:"Work Sans",Arial,sans-serif;font-size:15px;color:var(--accent);line-height:1.9;}
+.faq__a{font-family:"Work Sans",Arial,sans-serif;font-size:15px;color:var(--sub);line-height:2;}
+.faq__list h3{font-size:16px;font-weight:500;letter-spacing:.07em;line-height:1.9;}
+.faq__list p{font-size:15px;color:var(--ink);line-height:2;}
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+.ct__grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start;}
+.ct__big{font-family:"Work Sans",Arial,sans-serif;font-size:46px;letter-spacing:.03em;font-weight:500;
+  line-height:1.15;display:block;}
+.ct__big small{display:block;font-family:"Noto Sans JP",sans-serif;font-size:12px;letter-spacing:.16em;
+  color:var(--sub);margin-bottom:8px;}
+.ct__sub{margin-top:14px;font-size:14px;color:var(--sub);}
+.ct__actions{margin-top:36px;display:flex;gap:20px;flex-wrap:wrap;}
+.ct__info{border-top:1px solid var(--ink);}
+.ct__info div{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:16px 2px;
+  border-bottom:1px solid var(--line);font-size:15px;}
+.ct__info dt{color:var(--sub);}
+.ct__info dd{margin:0;letter-spacing:.04em;}
+
+/* =========================================================
+   Footer
+   ========================================================= */
+footer.site{border-top:1px solid var(--ink);padding:70px 0 40px;position:relative;}
+.foot__grid{display:grid;grid-template-columns:1fr 1fr auto;gap:50px;align-items:start;}
+.foot__addr{font-size:13.5px;line-height:2;color:var(--sub);}
+.foot__addr b{display:block;color:var(--ink);font-weight:500;font-size:16px;letter-spacing:.08em;margin-bottom:10px;}
+.foot__addr a{color:var(--ink);}
+.foot__nav ul{display:flex;flex-wrap:wrap;gap:14px 26px;font-size:14px;}
+.foot__licence{margin-top:26px;font-size:11px;line-height:1.9;color:var(--sub);}
+.pagetop{display:flex;flex-direction:column;align-items:center;gap:12px;}
+.pagetop .arw{width:1px;height:64px;background:var(--ink);position:relative;}
+.pagetop .arw::after{content:"";position:absolute;top:0;left:-3px;width:7px;height:7px;
+  border-top:1px solid var(--ink);border-right:1px solid var(--ink);transform:rotate(-45deg);}
+.foot__bottom{margin-top:54px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  font-size:11px;color:var(--sub);letter-spacing:.06em;}
+.foot__bottom .en{letter-spacing:.1em;}
+.mock{border:1px solid var(--line);background:var(--band-2);padding:14px 18px;font-size:11.5px;
+  color:var(--sub);line-height:1.9;margin-top:30px;}
+
+/* =========================================================
+   Scroll reveal
+   ========================================================= */
+.js .rv{opacity:0;transform:translateY(12px);transition:opacity .8s var(--ease),transform .8s var(--ease);}
+.js .rv.is-in{opacity:1;transform:none;}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+@media(max-width:1080px){
+  :root{--pad:110px;}
+  .msg__grid{grid-template-columns:320px 1fr;}
+  .msg__figure img{width:320px;height:400px;}
+  .msg__panel{padding:60px 40px 60px 80px;}
+  .biz__list{gap:70px 46px;}
+  .rec__top{grid-template-columns:1fr 280px;gap:44px;}
+  .comp__grid{grid-template-columns:1fr 280px;gap:46px;}
+  .hmeta{display:none;}
+  nav.main ul{gap:20px;font-size:12px;}
+}
+@media(max-width:900px){
+  :root{--pad:80px;}
+  header.site .wrap{height:68px;gap:16px;}
+  nav.main{position:fixed;inset:0;height:100dvh;background:#fff;transform:translateX(100%);
+    transition:transform .4s var(--ease);padding:110px 32px 40px;overflow-y:auto;margin-left:0;z-index:55;}
+  .drawer-bd{position:fixed;inset:0;background:rgba(17,17,17,.4);z-index:54;}
+  body.menu-open{overflow:hidden;}
+  nav.main.open{transform:none;}
+  nav.main ul{flex-direction:column;gap:0;font-size:20px;}
+  nav.main li{border-bottom:1px solid var(--line);}
+  nav.main a{display:block;padding:20px 0;letter-spacing:.1em;}
+  nav.main a::after{display:none;}
+  .hamb{display:block;z-index:70;}
+  .hbtn{display:none;}
+  .fv{padding-top:36px;}
+  .fv__view{padding-bottom:74px;}
+  .fv__slide{flex:0 0 100%;padding:0 24px;opacity:1;}
+  .fv__img{height:230px;}
+  .fv__cap{left:0;bottom:-24px;max-width:100%;}
+  .fv__cap p{font-size:18px;}
+  .fv__side{display:none;}
+  .fv__num b{font-size:30px;}
+  .fv__tabs{margin-top:-18px;justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;
+    gap:24px;padding:0 24px 4px;-ms-overflow-style:none;scrollbar-width:none;}
+  .fv__tabs::-webkit-scrollbar{display:none;}
+  .fv__tabs button{white-space:nowrap;font-size:13px;}
+  .lead{margin-top:48px;}
+  .lead .wrap{grid-template-columns:1fr;gap:34px;padding-top:44px;padding-bottom:44px;}
+  .lead h1{font-size:21px;letter-spacing:.07em;}
+  .lead__cta{text-align:left;}
+  .shead{margin-bottom:44px;}
+  .shead h2{font-size:20px;}
+  .msg__grid{grid-template-columns:1fr;}
+  .msg__figure img{width:100%;height:280px;clip-path:var(--chamfer);}
+  .msg__panel{margin-left:0;margin-top:-30px;padding:56px 24px 44px;}
+  .msg__panel h3{font-size:19px;}
+  .biz__intro{grid-template-columns:1fr;gap:30px;margin-bottom:50px;}
+  .biz__intro svg{max-width:260px;}
+  .biz__list{grid-template-columns:1fr;gap:48px;}
+  .biz__item{grid-template-columns:120px 1fr;gap:20px;}
+  .biz__item img{width:120px;height:150px;}
+  .biz__item h3{font-size:17px;}
+  .spec__grid{grid-template-columns:1fr;gap:0;}
+  .rec__top{grid-template-columns:1fr;gap:34px;}
+  .rec__top h2{font-size:24px;}
+  .jobs{grid-template-columns:1fr;gap:18px;}
+  .comp__grid{grid-template-columns:1fr;gap:40px;}
+  .deflist div{grid-template-columns:110px 1fr;gap:14px;font-size:14px;}
+  .faq__list > li{grid-template-columns:auto 1fr;gap:4px 14px;padding:24px 2px;}
+  .ct__grid{grid-template-columns:1fr;gap:44px;}
+  .ct__big{font-size:34px;}
+  .ct__info div{grid-template-columns:88px 1fr;gap:14px;font-size:14px;}
+  .foot__grid{grid-template-columns:1fr;gap:34px;}
+  .pagetop{flex-direction:row;align-self:flex-end;}
+  .pagetop .arw{height:1px;width:54px;}
+  .pagetop .arw::after{top:-3px;left:0;transform:rotate(-135deg);}
+  .pagetop .vtxt{writing-mode:horizontal-tb;}
+  .rec__cta{padding-top:36px;margin-top:40px;}
+}
+@media(max-width:430px){
+  .lead h1{font-size:19px;}
+  .lead__tel{font-size:26px;}
+  .ct__big{font-size:28px;}
+  .biz__item{grid-template-columns:1fr;}
+  .biz__item img{width:100%;height:200px;}
+  .btn{padding:16px 28px;font-size:13px;}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation:none!important;transition:none!important;}
+  .rv{opacity:1;transform:none;}
+  .fv__slide{opacity:1;}
+}
+</style>
+<!-- 構造化データ。noindex なので検索には出ないが、qa_check が必須としているので置く。
+     値は全てプレースホルダにしてある（種の会社の情報が残らないように） -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GeneralContractor",
+  "name": "株式会社多田組",
+  "url": "https://shogohukunaga.github.io/c-tadagumi/",
+  "telephone": "+81258522555",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "JP",
+    "addressRegion": "新潟県",
+    "addressLocality": "長岡市",
+    "streetAddress": "新潟県長岡市平2丁目1-15"
+  },
+  "description": "新潟県長岡市の家づくり・製材・土木工事。家づくり・製材事業・公共工事。"
+}
+</script>
+<!-- 配色の上書き。値が無ければブロックごと落ちてベースの既定色が残る -->
+<!--BLOCK:色_主--><style>:root{--accent:#896b3f;}</style><!--/BLOCK:色_主-->
+<!--BLOCK:色_地--><style>:root{--band:#f7f4ee;}</style><!--/BLOCK:色_地-->
+<!--BLOCK:色_文字--><style>:root{--ink:#302c25;}</style><!--/BLOCK:色_文字-->
+<style id="case-visual-layout">
+
+.works .strip{width:min(calc(var(--maxw,1180px) - 2 * var(--pad)),calc(100% - 2 * var(--pad)));margin-inline:auto;display:grid;grid-template-columns:repeat(var(--work-columns),minmax(0,1fr));gap:28px;}
+.works .sec-head p{color:var(--ink);}
+.works .strip figure{min-width:0;}
+.works .strip figure .ph{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;}
+.works .strip figcaption{padding:22px 0 0;border-top:0;}
+.works .strip .cat{font-size:12px;color:var(--brown);letter-spacing:.12em;}
+.works .strip .ttl{display:block;margin-top:8px;font-size:18px;line-height:1.8;}
+.works .strip .image-note{display:block;margin-top:10px;color:var(--sub);font-family:var(--sans);font-size:11px;letter-spacing:.06em;}
+.ctaband .contact-actions{display:flex;align-items:center;justify-content:center;gap:32px 56px;flex-wrap:wrap;}
+.ctaband .contact-method{display:flex;flex-direction:column;align-items:center;gap:12px;min-width:0;}
+.ctaband .contact-label{font-family:var(--sans);font-size:12px;letter-spacing:.12em;color:rgba(242,241,233,.8);}
+.ctaband .contact-actions .btn{min-height:60px;padding:16px 28px;display:inline-flex;align-items:center;justify-content:center;gap:20px;font-size:14px;line-height:1.6;max-width:100%;}
+.ctaband .contact-actions .tel{display:block;white-space:nowrap;font-size:clamp(27px,3.1vw,40px);line-height:1.5;letter-spacing:.06em;}
+@media(max-width:900px){.works .strip{gap:20px;}.works .strip .ttl{font-size:16px;}}
+@media(max-width:759px){.works .strip{max-width:520px;grid-template-columns:1fr;gap:36px;}.works .strip figcaption{padding-top:16px;}.ctaband .contact-actions{flex-direction:column;gap:32px;}.ctaband .contact-method{width:100%;}.ctaband .contact-actions .btn{width:min(100%,340px);}}
+.fv__tabs{padding-inline:24px;gap:14px 28px;}
+.fv__tabs button{min-height:44px;padding:8px 0;white-space:nowrap;}
+.fv__tabs button:focus-visible{outline:2px solid var(--ink);outline-offset:5px;}
+.fv__photo-note{text-align:center;margin:18px 24px 0;font-size:11px;color:var(--sub);}
+@media(max-width:600px){.fv__tabs{display:grid;grid-template-columns:repeat(2,max-content);column-gap:18px;row-gap:8px;}.fv__tabs button{font-size:12px;letter-spacing:0;}}
+</style>
+<style id="model-trial-case-tweaks">
+.section-image-note{margin:28px 0 0;text-align:right;color:var(--sub);font-size:11px;line-height:1.7;}
+.ct__actions .official-link,.rec__actions .official-link{display:inline-flex;align-items:center;justify-content:center;}
+@media(max-width:600px){.section-image-note{text-align:left;}.ct__actions .official-link,.rec__actions .official-link{width:100%;}.deflist{min-width:0}.deflist div{grid-template-columns:minmax(0,110px) minmax(0,1fr)}.deflist dd,.deflist dd a{min-width:0;overflow-wrap:anywhere;}}
+</style>
+</head>
+<body>
+
+<!-- ===================== Header ===================== -->
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="株式会社多田組 トップへ">
+      <span class="brand__mark" aria-hidden="true"><span></span><span></span></span>
+      <span class="brand__name">株式会社多田組<small>TADA HOUSING</small></span>
+    </a>
+    <p class="hmeta">新潟県長岡市平2丁目1-15<br><b>T. 0258-52-2555</b></p>
+    <div class="drawer-bd" data-drawer-backdrop hidden></div>
+    <nav class="main" id="nav" data-drawer aria-hidden="true">
+      <ul>
+        <li><a href="#message">理念</a></li>
+        <li><a href="#business">事業領域</a></li>
+        
+        <li><a href="#recruit">採用情報</a></li>
+        <li><a href="#company">会社概要</a></li>
+        <li><a href="#faq">よくあるご質問</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+      </ul>
+    </nav>
+    <a class="btn hbtn" href="#contact">お問い合わせ</a>
+    <button class="hamb" id="hamb" type="button" data-drawer-toggle aria-label="メニューを開く" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- ===================== FV ===================== -->
+<section class="fv grid-bg" aria-label="事業領域">
+  <div class="fv__view">
+    <div class="fv__track" id="fvTrack">
+
+      <article class="fv__slide" data-i="0" data-slot="1" id="fvPanel0" role="tabpanel" aria-labelledby="fvTab0">
+        <div class="fv__num"><b>01</b><em>HOUSING</em></div>
+        <div class="fv__tags"><span>#自由設計の住まい</span><span>#自社製材</span><span>#公共工事</span></div>
+        <div class="fv__body">
+          <img class="fv__img" src="image/case-hero-1.jpg" alt="障子と畳のある明るい室内。住まいを紹介するイメージ写真" width="1800" height="1200" loading="eager" decoding="async">
+          <div class="fv__cap"><p>家族の想いを、住まいに。</p><p>自由設計の家づくり。</p></div>
+        </div>
+      </article>
+
+      <article class="fv__slide" data-i="1" data-slot="2" id="fvPanel1" role="tabpanel" aria-labelledby="fvTab1">
+        <div class="fv__num"><b>02</b><em>WOOD PROCESSING</em></div>
+        <div class="fv__tags"><span>#自由設計の住まい</span><span>#自社製材</span><span>#公共工事</span></div>
+        <div class="fv__body">
+          <img class="fv__img" src="image/case-hero-2.jpg" alt="木材に鉛筆で印を付ける手元。木材加工のイメージ写真" width="1800" height="1800" loading="lazy" decoding="async">
+          <div class="fv__cap"><p>木の持ち味を、活かす。</p><p>自社で取り組む木材加工。</p></div>
+        </div>
+      </article>
+
+      <article class="fv__slide" data-i="2" data-slot="3" id="fvPanel2" role="tabpanel" aria-labelledby="fvTab2">
+        <div class="fv__num"><b>03</b><em>CIVIL ENGINEERING</em></div>
+        <div class="fv__tags"><span>#自由設計の住まい</span><span>#自社製材</span><span>#公共工事</span></div>
+        <div class="fv__body">
+          <img class="fv__img" src="image/case-hero-3.jpg" alt="砕石の上で作業する油圧ショベルを上から見た土木工事のイメージ写真" width="1800" height="1234" loading="lazy" decoding="async">
+          <div class="fv__cap"><p>地域の暮らしを支える。</p><p>安全・安心につながる公共工事。</p></div>
+        </div>
+      </article>
+
+      
+
+    </div>
+  </div>
+
+  <div class="fv__tabs" role="tablist" aria-label="スライドを選択" id="fvTabs">
+<button type="button" role="tab" id="fvTab0" aria-controls="fvPanel0" aria-selected="true" tabindex="0" data-i="0"><span class="dia dia--accent" aria-hidden="true"></span>家づくり</button>
+<button type="button" role="tab" id="fvTab1" aria-controls="fvPanel1" aria-selected="false" tabindex="-1" data-i="1"><span class="dia dia--accent" aria-hidden="true"></span>製材事業</button>
+<button type="button" role="tab" id="fvTab2" aria-controls="fvPanel2" aria-selected="false" tabindex="-1" data-i="2"><span class="dia dia--accent" aria-hidden="true"></span>公共工事</button>
+</div>
+<p class="fv__photo-note">ヒーロー写真は実際の施工・社員ではなく、事業を紹介するためのイメージです。</p>
+
+  <div class="lead">
+    <div class="wrap">
+      <div>
+        <p class="lead__tag en">WOOD, HOME & COMMUNITY</p>
+        <h1>
+          <span class="line">木から、住まいへ。</span>
+          <span class="line">暮らしをつくり、地域を支える。</span>
+        </h1>
+        <p class="lead__meta">株式会社多田組は、新潟県長岡市の家づくり・製材・土木工事です。<br>
+          多田組は新潟県長岡市を拠点に、家づくり、製材、公共工事に取り組む会社です。昭和8年に材木店から始まり、自社で培ってきた木材加工の技術を住まいづくりに活かしています。家族ごとに異なる暮らしを、完全自由設計でかたちにします。</p>
+      </div>
+      <div class="lead__cta">
+        <a class="lead__tel en" href="tel:0258522555"><small>お問い合わせ・ご相談</small>0258-52-2555</a>
+        <a class="btn" href="#recruit">採用情報を見る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MESSAGE ===================== -->
+<section class="msg" id="message">
+  <div class="wrap">
+    <div class="shead rv">
+      <h2>MESSAGE</h2>
+      <p>私たちについて</p>
+    </div>
+    <div class="msg__grid">
+      <figure class="msg__figure rv">
+        <img src="image/case-company.jpg" alt="障子と畳のある明るい室内。住まいを紹介するイメージ写真" width="1800" height="2694" loading="lazy" decoding="async">
+      </figure>
+      <div class="msg__panel rv">
+        <h3>
+          <span class="line">OUR APPROACH</span>
+          <span class="line">木の持ち味を、暮らしの中へ。</span>
+        </h3>
+        <p class="en-sub">ABOUT US</p>
+        <p>昭和8年、材木店から始まった多田組。地元をはじめ日本各地の材木を仕入れ、自社で製材加工を行ってきました。</p>
+        <p>住まいづくりでは、家族の想いやこだわり、趣味を楽しむ時間を大切にしています。県産材と様々な木材を適材適所で組み合わせ、暮らしに合う住空間を提案しています。</p>
+        <p>製材の技術を住まいへ。そして公共工事を通じて、地域の安全・安心な暮らしを支えています。</p>
+        
+      </div>
+    </div>
+
+    <div class="msg__art rv" aria-hidden="true">
+      <!-- 稜線とラティスの線画 -->
+      <svg viewBox="0 0 520 150" fill="none" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 138 L96 44 L150 92 L206 34 L268 104 L318 68 L372 118 L438 74 L516 138"/>
+        <path d="M206 34 L232 60 M206 34 L188 58"/>
+        <path d="M268 104 L516 138" stroke-dasharray="5 6"/>
+        <g opacity=".85">
+          <path d="M330 128 L360 100 M352 132 L382 104 M374 136 L404 108 M396 140 L426 112"/>
+          <path d="M336 104 L366 132 M358 100 L388 128 M380 100 L410 128 M402 104 L432 132"/>
+          <path d="M322 132 L440 132"/>
+        </g>
+        <path d="M60 138 L60 120 L76 120 L76 138" />
+        <path d="M60 120 L68 112 L76 120"/>
+        <circle cx="452" cy="30" r="11"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BUSINESS ===================== -->
+<section class="biz" id="business">
+  <div class="wrap">
+    <div class="biz__intro">
+      <div class="shead rv" style="margin-bottom:0">
+        <h2>BUSINESS</h2>
+        <p>事業領域</p>
+        <p class="note">暮らしに寄り添う家づくり、その土台となる木材加工、地域の整備を担う公共工事。3つの事業をご紹介します。</p>
+      </div>
+      <div class="rv" aria-hidden="true">
+        <!-- トンネル断面（アーチ＋支保工）の線画 -->
+        <svg viewBox="0 0 300 170" fill="none" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 154 C18 66 78 16 150 16 C222 16 282 66 282 154"/>
+          <path d="M40 154 C40 80 88 38 150 38 C212 38 260 80 260 154"/>
+          <path d="M62 154 C62 94 98 60 150 60 C202 60 238 94 238 154"/>
+          <path d="M6 154 L294 154"/>
+          <path d="M150 16 L150 38 M96 26 L106 46 M204 26 L194 46 M56 60 L72 76 M244 60 L228 76 M30 108 L48 114 M270 108 L252 114"/>
+          <path d="M118 154 L118 126 L182 126 L182 154" stroke-dasharray="4 5"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="biz__list">
+      <article class="biz__item rv">
+        <figure><img src="image/case-business-1.jpg" alt="障子と畳のある明るい室内。住まいを紹介するイメージ写真" width="1800" height="1200" loading="lazy" decoding="async"></figure>
+        <div>
+          <p class="biz__num">01</p>
+          <p class="biz__en">HOUSING</p>
+          <h3>家づくり</h3>
+          <p>完全自由設計で、家族の想いや暮らし方を反映した住まいを提案します。趣味を楽しむ空間や、家族・友人と過ごす時間。ひとつひとつのこだわりを住まいのかたちへつなげます。</p>
+        </div>
+      </article>
+
+      <article class="biz__item rv">
+        <figure><img src="image/case-business-2.jpg" alt="木材に鉛筆で印を付ける手元。木材加工のイメージ写真" width="1800" height="1800" loading="lazy" decoding="async"></figure>
+        <div>
+          <p class="biz__num">02</p>
+          <p class="biz__en">WOOD PROCESSING</p>
+          <h3>製材事業</h3>
+          <p class="req">昭和8年より培ってきた製材技術を活かし、自社で木材加工を行っています。県産材をはじめ、様々な木材の特性を組み合わせ、適材適所の家づくりを支えます。</p>
+        </div>
+      </article>
+
+      <article class="biz__item rv">
+        <figure><img src="image/case-business-3.jpg" alt="砕石の上で作業する油圧ショベルを上から見た土木工事のイメージ写真" width="1800" height="1234" loading="lazy" decoding="async"></figure>
+        <div>
+          <p class="biz__num">03</p>
+          <p class="biz__en">CIVIL ENGINEERING</p>
+          <h3>公共工事</h3>
+          <p class="req">地域の安全・安心な暮らしを支える整備事業に取り組んでいます。住まいをつくる仕事とともに、地域の基盤を支える土木工事を行っています。</p>
+        </div>
+      </article>
+
+      
+    </div>
+    <p class="section-image-note">事業写真は実際の施工・社員ではなく、各事業を紹介するためのイメージです。</p>
+
+  </div>
+</section>
+
+
+
+<!-- ===================== RECRUIT ===================== -->
+<section class="rec" id="recruit">
+  <div class="wrap">
+    <div class="rec__top">
+      <div class="rv">
+        <p class="badge">募集中</p>
+        <h2>
+          <span class="line">地元で、</span>
+          <span class="line">長く働く。</span>
+        </h2>
+        <p class="en-sub">RECRUIT</p>
+        <p><span class="line">建築・土木技術者、土木作業員を募集しています。</span><span class="line">勤務地は新潟県長岡市。</span><span class="line">長岡市・長岡市近辺で、家づくりと地域を支える仕事に取り組みませんか。募集条件と応募方法は公式サイトの採用情報をご確認ください。</span></p>
+      </div>
+      <div class="rec__photo rv">
+        <img src="image/recruit.jpg" alt="ヘルメットと安全ベストを着用して現場に立つ作業員の後ろ姿" width="1800" height="2700" loading="lazy" decoding="async">
+        <p class="rec__cap">※ 写真は実際の社員ではなく、採用を紹介するためのイメージです</p>
+      </div>
+    </div>
+
+    <div class="rec__cta rv">
+      <p>まずはお電話ください。<br>ご不明な点だけのお問い合わせでも構いません。</p>
+      <div class="rec__actions">
+        <a class="tel en" href="tel:0258522555"><small>採用に関するお問い合わせ</small>0258-52-2555</a>
+        <!--BLOCK:メール--><a class="btn" href="mailto:tadagumi@tadagumi.com?subject=%E6%8E%A1%E7%94%A8%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">メールで問い合わせる</a><!--/BLOCK:メール-->
+        <a class="btn official-link" href="http://www.tadagumi.com/recruit/index.html" target="_blank" rel="noopener noreferrer">公式採用情報 <span aria-hidden="true">↗</span></a>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== COMPANY ===================== -->
+<section class="comp" id="company">
+  <div class="wrap">
+    <div class="shead rv">
+      <h2>COMPANY</h2>
+      <p>会社概要</p>
+    </div>
+    <div class="comp__grid">
+      <dl class="deflist rv">
+        <div><dt>社名</dt><dd>株式会社多田組</dd></div>
+        <div><dt>所在地</dt><dd><!--BLOCK:郵便番号-->〒940-0137　<!--/BLOCK:郵便番号-->新潟県長岡市平2丁目1-15</dd></div>
+        
+        <div><dt>設立</dt><dd>創業 昭和8年4月</dd></div>
+        <!--BLOCK:資本金--><div><dt>資本金</dt><dd>4,800万円</dd></div><!--/BLOCK:資本金-->
+        <div><dt>事業種目</dt><dd>建設業（家づくり／製材事業／公共工事）</dd></div>
+        <div><dt>電話</dt><dd>TEL 0258-52-2555</dd></div>
+        <!--BLOCK:メール--><div><dt>メール</dt><dd><a class="tlink" href="mailto:tadagumi@tadagumi.com">tadagumi@tadagumi.com</a></dd></div><!--/BLOCK:メール-->
+      </dl>
+      
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="shead rv">
+      <h2>FAQ</h2>
+      <p>よくあるご質問</p>
+    </div>
+    <ul class="faq__list rv">
+      <li>
+        <span class="faq__q" aria-hidden="true">Q.</span>
+        <h3>株式会社多田組はどこにありますか？</h3>
+        <span class="faq__a" aria-hidden="true">A.</span>
+        <p>新潟県長岡市平2丁目1-15にあります。</p>
+      </li>
+      <!--BLOCK:FAQ1_回答-->
+      <li>
+        <span class="faq__q" aria-hidden="true">Q.</span>
+        <h3>どのような事業を行っていますか？</h3>
+        <span class="faq__a" aria-hidden="true">A.</span>
+        <p>家づくり、製材事業、公共工事に取り組んでいます。住まいは完全自由設計で提案しています。</p>
+      </li>
+      <!--/BLOCK:FAQ1_回答-->
+      <!--BLOCK:FAQ2_回答-->
+      <li>
+        <span class="faq__q" aria-hidden="true">Q.</span>
+        <h3>採用の募集職種を教えてください。</h3>
+        <span class="faq__a" aria-hidden="true">A.</span>
+        <p>公式サイトでは建築・土木技術者、土木作業員を募集しています。応募方法や条件は公式の採用情報をご確認ください。</p>
+      </li>
+      <!--/BLOCK:FAQ2_回答-->
+      <!--BLOCK:FAQ3_回答-->
+      <li>
+        <span class="faq__q" aria-hidden="true">Q.</span>
+        <h3>どのような木材を扱っていますか？</h3>
+        <span class="faq__a" aria-hidden="true">A.</span>
+        <p>地元をはじめ日本各地の材木を仕入れ、自社で製材加工を行っています。県産材と様々な木材を組み合わせた家づくりを提案しています。</p>
+      </li>
+      <!--/BLOCK:FAQ3_回答-->
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="ct" id="contact">
+  <div class="wrap">
+    <div class="shead rv">
+      <h2>CONTACT</h2>
+      <p>お問い合わせ</p>
+    </div>
+    <div class="ct__grid">
+      <div class="rv">
+        <a class="ct__big" href="tel:0258522555"><small>お電話でのお問い合わせ</small>0258-52-2555</a>
+        <p class="ct__sub">工事のご相談も、採用へのご応募も、こちらの番号で承ります。</p>
+        <div class="ct__actions">
+          <!--BLOCK:メール--><a class="btn" href="mailto:tadagumi@tadagumi.com">メールで問い合わせる</a><!--/BLOCK:メール-->
+          <a class="btn official-link" href="http://www.tadagumi.com/contact/index.html" target="_blank" rel="noopener noreferrer">公式お問い合わせフォーム <span aria-hidden="true">↗</span></a>
+          <a class="btn btn--ghost" href="#recruit">採用情報を見る</a>
+        </div>
+      </div>
+      <dl class="ct__info rv">
+        <div><dt>本社</dt><dd><!--BLOCK:郵便番号-->〒940-0137　<!--/BLOCK:郵便番号-->新潟県長岡市平2丁目1-15</dd></div>
+        <div><dt>TEL</dt><dd>0258-52-2555</dd></div>
+        <!--BLOCK:FAX--><div><dt>FAX</dt><dd>0258-52-3565</dd></div><!--/BLOCK:FAX-->
+        <!--BLOCK:メール--><div><dt>MAIL</dt><dd><a class="tlink" href="mailto:tadagumi@tadagumi.com">tadagumi@tadagumi.com</a></dd></div><!--/BLOCK:メール-->
+      </dl>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== Footer ===================== -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div class="foot__addr">
+        <b>株式会社多田組</b>
+        <!--BLOCK:郵便番号-->〒940-0137　<!--/BLOCK:郵便番号-->新潟県長岡市平2丁目1-15<br>
+        <a class="tlink" href="tel:0258522555">T. 0258-52-2555</a>　F. 0258-52-3565<br>
+        <!--BLOCK:メール--><a class="tlink" href="mailto:tadagumi@tadagumi.com">tadagumi@tadagumi.com</a><!--/BLOCK:メール-->
+        <p class="foot__licence">創業 昭和8年4月</p>
+      </div>
+      <nav class="foot__nav" aria-label="フッターナビゲーション">
+        <ul>
+          <li><a class="tlink" href="#message">理念</a></li>
+          <li><a class="tlink" href="#business">事業領域</a></li>
+          
+          <li><a class="tlink" href="#recruit">採用情報</a></li>
+          <li><a class="tlink" href="#company">会社概要</a></li>
+          <li><a class="tlink" href="#faq">よくあるご質問</a></li>
+          <li><a class="tlink" href="#contact">お問い合わせ</a></li>
+        </ul>
+        <p class="mock">本ページはリニューアル提案用のデザインモックアップです。掲載写真はすべてイメージ（フリー素材）であり、実際のお写真に差し替わります。</p>
+      </nav>
+      
+    </div>
+    <div class="foot__bottom">
+      <span class="en">Copyright(C), TADA HOUSING ALL rights reserved</span>
+      <span>WOOD, HOME & COMMUNITY</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- ハンバーガー ---------- */
+  var hamb = document.querySelector("[data-drawer-toggle]"),
+      nav  = document.querySelector("[data-drawer]"),
+      bd   = document.querySelector("[data-drawer-backdrop]");
+  function setNav(open){
+    nav.classList.toggle("open", open);
+    nav.setAttribute("aria-hidden", open ? "false" : "true");
+    hamb.setAttribute("aria-expanded", open ? "true" : "false");
+    bd.hidden = !open;
+    document.body.classList.toggle("menu-open", open);
+  }
+  function closeNav(){ setNav(false); }
+  hamb.addEventListener("click", function(){ setNav(!nav.classList.contains("open")); });
+  bd.addEventListener("click", closeNav);
+  document.addEventListener("keydown", function(e){ if(e.key === "Escape") closeNav(); });
+  nav.addEventListener("click", function(e){ if(e.target.tagName === "A") closeNav(); });
+  // 画面幅が戻ったらドロワー状態を必ず解除する（PCで body が固定されたままになる）
+  window.addEventListener("resize", function(){
+    if(window.innerWidth > 900 && nav.classList.contains("open")) closeNav();
+  });
+
+  /* ---------- FVカルーセル ---------- */
+  var track = document.getElementById("fvTrack"),
+      tabs = document.getElementById("fvTabs"),
+      slides = Array.prototype.slice.call(track.children),
+      btns = Array.prototype.slice.call(tabs.querySelectorAll("button")),
+      cur = 0, timer = null;
+  function layout(){
+    var vw=track.parentNode.clientWidth, sw=slides[0].offsetWidth,
+        x=window.innerWidth<=900 ? -cur*sw : vw/2-(cur*sw+sw/2);
+    track.style.transform="translateX("+x+"px)";
+    slides.forEach(function(s,i){s.classList.toggle("is-on",i===cur);s.setAttribute("aria-hidden",i===cur?"false":"true");});
+    btns.forEach(function(b,i){b.setAttribute("aria-selected",i===cur?"true":"false");b.tabIndex=i===cur?0:-1;});
+  }
+  function go(i){cur=(i+slides.length)%slides.length;layout();}
+  function stop(){if(timer){clearInterval(timer);timer=null;}}
+  function start(){stop();if(reduce||tabs.contains(document.activeElement))return;timer=setInterval(function(){go(cur+1);},6000);}
+  btns.forEach(function(b,i){
+    b.addEventListener("click",function(){go(i);start();});
+    b.addEventListener("keydown",function(e){
+      var next=e.key==="ArrowRight"?cur+1:e.key==="ArrowLeft"?cur-1:e.key==="Home"?0:e.key==="End"?slides.length-1:null;
+      if(next===null)return;e.preventDefault();stop();go(next);btns[cur].focus();
+    });
+  });
+  tabs.addEventListener("focusin",stop);
+  tabs.addEventListener("focusout",function(){setTimeout(start,0);});
+  track.parentNode.addEventListener("mouseenter",stop);
+  track.parentNode.addEventListener("mouseleave",start);
+  window.addEventListener("resize",layout);layout();start();
+
+  /* ---------- スクロールリビール ---------- */
+  var rv = Array.prototype.slice.call(document.querySelectorAll(".rv"));
+  function revealAll(){ rv.forEach(function(el){ el.classList.add("is-in"); }); }
+  if (reduce || !("IntersectionObserver" in window)) {
+    revealAll();
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting) return;
+        var el = en.target;
+        var sibs = Array.prototype.slice.call(el.parentNode.children).filter(function(n){
+          return n.classList && n.classList.contains("rv");
+        });
+        el.style.transitionDelay = (Math.min(sibs.indexOf(el), 5) * 80) + "ms";
+        el.classList.add("is-in");
+        io.unobserve(el);
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
+    rv.forEach(function(el){ io.observe(el); });
+    /* 失敗時の保険: 監視が一度も発火しなければ全部出す（提案先で真っ白にしない） */
+    setTimeout(function(){ if(!document.querySelector(".rv.is-in")) revealAll(); }, 2500);
+    window.addEventListener("load", function(){
+      setTimeout(function(){ if(!document.querySelector(".rv.is-in")) revealAll(); }, 1200);
+    });
+  }
+})();
+</script>
+</body>
+</html>
